@@ -2,6 +2,7 @@
 
 * a simple comic strip creator for browsers, made for desktop/mobile devices
 * implemented [here](https://egar.fr/studio.html)
+* the version available here lacks some image resources because i dont know how to import everything at once and creating folders is painfully slow
 
 ## get started / prerequisites
 
