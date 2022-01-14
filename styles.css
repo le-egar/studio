@@ -1,0 +1,354 @@
+.contenu {
+    cursor: crosshair;
+    text-decoration: none;
+    font-size: 35px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.liens a {
+    text-decoration: none;
+    font-style: normal;
+    color: rgb(213, 241, 52);
+    background-color: rgb(109, 85, 61);
+    cursor: grab;
+    margin: 15px;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(93, 163, 93);
+    margin-left: -5px;
+}
+
+html {
+    cursor: crosshair;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.soustitre {
+    margin: 0px 0px 25px auto;
+    font-style: italic;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.grille {
+    max-width: 2300px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 800px);
+    justify-content: center;
+    grid-gap: 100px;
+}
+
+.grid-item {
+    display: block;
+    width: 800px;
+    height: 800px;
+    border: 8px solid rgb(0, 0, 0);
+    justify-content: center;
+    margin-left: -8px;
+}
+
+.legende {
+    font-size: x-large;
+    margin: 10px 0px;
+}
+
+.sociaux {
+    text-align: center;
+    margin: 50px 0px auto;
+    justify-content: center;
+}
+
+.sociaux a {
+    cursor: grab;
+}
+
+.textsoc {
+    display: block;
+    margin: 0px auto;
+    width: fit-content;
+    background-color: rgb(213, 241, 52);
+    text-align: center;
+    justify-content: center;
+}
+
+.grillesoc {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    margin: auto;
+    width: 800px;
+    height: auto;
+    justify-content: center;
+}
+
+.apropos {
+    margin: 60px;
+    font-style: italic;
+    color: rgb(109, 85, 61);
+}
+
+.paypal {
+    position: fixed;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+    left: 0;
+}
+
+.paypal a {
+    cursor: grab;
+}
+
+.boutique {
+    margin: 10% auto;
+    color: rgb(213, 241, 52);
+    border: solid rgb(213, 241, 52);
+    width: fit-content;
+    font-size: 27px;
+}
+
+.canvas-container {
+    margin: 0 auto;
+    background-color: white;
+    border: 8px solid black;
+    cursor: inherit;
+}
+
+.bouton,
+.fond {
+    background-color: transparent;
+    border: transparent;
+    cursor: inherit;
+}
+
+.objimg {
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+    vertical-align: middle;
+    padding-top: 15px;
+    cursor: crosshair;
+}
+
+#tabs,
+#ongs {
+    max-width: 816px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-left: 0;
+    list-style: none;
+    cursor: inherit;
+}
+  
+#tabs a,
+#ongs a {
+    position: relative;
+    padding: 1em 2em;
+    float: left;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background: green;
+    cursor: inherit;
+}
+
+#tabs #current a,
+#tabs #current a::after,
+#ongs #current a,
+#ongs #current a::after {
+    background: rgb(112, 194, 112);
+    z-index: 3;
+    cursor: inherit;
+}
+
+#content,
+#fonds {
+    margin: 0 auto;
+    max-width: 816px;
+    background: rgb(112, 194, 112);
+    height: 200px;
+    position: relative;
+    z-index: 2;
+    overflow: auto;
+    white-space: nowrap;
+    cursor: inherit;
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: inherit;
+  }
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(112, 194, 112);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: green;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+}
+
+.colorpicker {
+    height: 35px;
+    width: 60px;
+    background-color: transparent;
+    border: transparent;
+    cursor: inherit;
+}
+
+.txtgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    width: 816px;
+    height: 120px;
+    padding-top: 30px;
+}
+
+.txtgriditem {
+    width: 388px;
+    height: 120px;
+    display: block;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.btnadd {
+    font-size: 20px;
+    vertical-align: top;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(109, 85, 61);
+    color: greenyellow;
+    border-style: none;
+    height: 120px;
+    cursor: inherit;
+}
+
+.txtarea {
+    margin: 0 20px 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(112, 194, 112);
+    border: 2px solid black;
+    cursor: inherit;
+}
+
+::placeholder {
+    color: black;
+}
+
+textarea {
+    border: none;
+    outline: none;
+}
+
+.telecharger{
+    color: black;
+    font-size: 25px;
+    display: block;
+    text-decoration: underline;
+    float:right;
+    cursor: crosshair;
+}
+
+.conteneurCanvas {
+    margin: 0 auto;
+    width: 816px;
+}
+
+.titre {
+    margin: 5px 0 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(112, 194, 112);
+    border: 2px solid black;
+    cursor: inherit;
+}
+
+.nombrecases {
+    width: 100px;
+    height: 25px;
+    margin: 0 auto;
+    cursor: inherit;
+    background: rgb(0, 65, 0);
+    text-align: center;
+    font-size: 20px;
+}
+
+.nombrecases input {
+   position: absolute;
+   opacity: 0;
+   cursor: inherit;
+   width: 20px;
+   height: 30px;
+}
+
+ .nombrecases input + label {
+   padding: 7px;
+   color: rgb(203, 233, 203);
+   cursor: inherit;
+}
+
+ .nombrecases input:checked + label {
+   background: green;
+}
+
+.conteneuroverlay {
+    display: grid;
+}
+
+.nombrecases, .telechargerdiv {
+    grid-area: 1 / 1;
+}
+
+.clrbtn {
+    width: 200px;
+    margin: 25px;
+    display: grid;
+}
+
+.clrbtn input {
+    width: 200px;
+    height: 120px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    opacity: 0;
+}
+
+.clrbtn input, .imagechg {
+    grid-area: 1 / 1;
+    max-width: 200px;
+}
+
+.htck {
+    text-decoration: none underline;
+    color: black;
+    cursor: grab;
+}
+
+.importgrid {
+    display: grid;
+}
+
+.importer {
+    opacity: 0;
+}
+
+.importerimg, .importer {
+    grid-column: 1;
+    grid-row: 1;
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    height: 150px;
+}

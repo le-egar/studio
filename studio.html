@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>egar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="fabric.min.js"></script>
+</head>
+<body>
+<!-- autres -->
+<img src="/images/autres/fondSix.png" id="overSix" style="display: none;" />
+<img src="/images/autres/fondQuatre.png" id="overQuatre" style="display: none;" />
+<img src="/images/autres/croix.png" id="croix" style="display: none;" />
+<img src="/images/temp.png" id="temp" style="display: none;" />  
+
+<!-- header -->
+<div class="contenu">
+    <div class="liens">
+        <a href="maison.html">maison</a>
+        <a href="studio.html">►studio</a>
+        <a href="magasin.html">magasin</a>
+        <a href="apropos.html">a propos</a>
+    </div>
+
+    <div class="soustitre">
+        <div> creer ta bandessiner (lourdement inspire de <a href="https://htck.github.io/bayeux/#!/" class="htck" target="_blank">ceci</a>) </div>
+    </div>
+</div>
+
+<div class="conteneurCanvas">
+<!-- canvas -->
+    <canvas id="c" width="800px" height="800px"></canvas>
+
+
+<div class="conteneuroverlay">
+
+<!-- nombre cases -->
+<div class="nombrecases">
+    <input class="boutoncases" name='o' id="overUn" type="radio" onclick='overChange(this)' value='1' />
+    <label class="txtbtn" for="overUn">1</label>
+    <input class="boutoncases" name='o' id="overQuatre" type="radio" onclick='overChange(this)' value='2' />
+    <label class="txtbtn" for="overQuatre">4</label>
+    <input class="boutoncases" name='o' id="overSix" type="radio" onclick='overChange(this)' value='3' checked/>
+    <label class="txtbtn" for="overSix">6</label>
+</div>
+
+<!-- bouton imprimer -->
+<div id="container" class="telechargerdiv">
+    <textarea id="titre" cols="16" rows="1" placeholder="titre de bd" class="titre"></textarea>
+    <a id="lnkDownload" href="#" class="telecharger">sauvegarder la bede</a>
+</div>
+</div> 
+</div>
+
+<!-- menu -->
+    <!-- onglets menu -->
+        <ul id="tabs">
+            <li><a href="#" name="tab1">humains</a></li>
+            <li><a href="#" name="tab2">animaux et autres</a></li>
+            <li><a href="#" name="tab3">objets</a></li>
+            <li><a href="#" name="tab4">ajouter texte</a></li>
+            <li><a href="#" name="tab5">importer</a></li>
+        </ul>
+    
+    <!-- contenu menu creation -->
+    <div id="content">
+
+        <!-- personnages -->
+        <div id="tab1">
+            <div>
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/addict.png" class= "objimg" id="addict">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/arthur.png" class= "objimg" id="arthur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/arthur2.png" class= "objimg" id="arthur2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/aventurier.png" class= "objimg" id="aventurier">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/beargrylls.png" class= "objimg" id="beargrylls">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/blagueur.png" class= "objimg" id="blagueur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/burgonde.png" class= "objimg" id="burgonde">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/businessman.png" class= "objimg" id="businessman">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/cadavre.png" class= "objimg" id="cadavre">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/camille.png" class= "objimg" id="camille">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/chaperon.png" class= "objimg" id="chaperon">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/client.png" class= "objimg" id="client">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/client2.png" class= "objimg" id="client2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/clientbar.png" class= "objimg" id="clientbar">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/clown_content.png" class= "objimg" id="clown_content">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/clown_triste.png" class= "objimg" id="clown_triste">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/coiffeur.png" class= "objimg" id="coiffeur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/coiffeur2.png" class= "objimg" id="coiffeur2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/cuistot.png" class= "objimg" id="cuistot">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dame.png" class= "objimg" id="dame">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dame2.png" class= "objimg" id="dame2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dame3.png" class= "objimg" id="dame3">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dame4.png" class= "objimg" id="dame4">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dame5.png" class= "objimg" id="dame5">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dieu.png" class= "objimg" id="dieu">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dieu2.png" class= "objimg" id="dieu2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dora.png" class= "objimg" id="dora">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/dresseur.png" class= "objimg" id="dresseur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/employe.png" class= "objimg" id="employe">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/eric.png" class= "objimg" id="eric">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/eric2.png" class= "objimg" id="eric2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/gamer.png" class= "objimg" id="gamer">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/gamer2.png" class= "objimg" id="gamer2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/gamer3.png" class= "objimg" id="gamer3">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/gangster.png" class= "objimg" id="gangster">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/geek.png" class= "objimg" id="geek">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/genou.png" class= "objimg" id="genou">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/haddock.png" class= "objimg" id="haddock">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/haddock2.png" class= "objimg" id="haddock2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/homme.png" class= "objimg" id="homme">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/homme_reflechit.png" class= "objimg" id="homme_reflechit">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/homme_telephone.png" class= "objimg" id="homme_telephone">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/hommecasquette.png" class= "objimg" id="hommecasquette">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/jesus.png" class= "objimg" id="jesus">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/joyeux.png" class= "objimg" id="joyeux">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/lecteur.png" class= "objimg" id="lecteur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/livreur.png" class= "objimg" id="livreur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/madame.png" class= "objimg" id="madame">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/madamedos.png" class= "objimg" id="madamedos">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/madametete.png" class= "objimg" id="madametete">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/maman.png" class= "objimg" id="maman">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/mamie.png" class= "objimg" id="mamie">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/martin.png" class= "objimg" id="martin">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/merlin.png" class= "objimg" id="merlin">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/morty.png" class= "objimg" id="morty">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/morty2.png" class= "objimg" id="morty2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/nageur.png" class= "objimg" id="nageur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/nageuse.png" class= "objimg" id="nageuse">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/pandore.png" class= "objimg" id="pandore">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/patron.png" class= "objimg" id="patron">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/penser.png" class= "objimg" id="penser">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/perceval.png" class= "objimg" id="perceval">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/pied_nu_bras_tendu.png" class= "objimg" id="pied_nu_bras_tendu">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/pistolet.png" class= "objimg" id="pistolet">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/policier.png" class= "objimg" id="policier">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/presente.png" class= "objimg" id="presente">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/quelqun.png" class= "objimg" id="quelqun">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/quelqun2.png" class= "objimg" id="quelqun2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/rampe.png" class= "objimg" id="rampe">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/relax.png" class= "objimg" id="relax">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/saturne.png" class= "objimg" id="saturne">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/seli.png" class= "objimg" id="seli">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/sourire.png" class= "objimg" id="sourire">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/squad.png" class= "objimg" id="squad">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/starwars.png" class= "objimg" id="starwars">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tablee.png" class= "objimg" id="unetablee">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/telephoner.png" class= "objimg" id="telephoner">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tintin.png" class= "objimg" id="tintin">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tintin2.png" class= "objimg" id="tintin2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tintin3.png" class= "objimg" id="tintin3">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tintin4.png" class= "objimg" id="tintin4">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/touareg.png" class= "objimg" id="touareg">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/touareg1.png" class= "objimg" id="touareg1">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tshirtchat.png" class= "objimg" id="tshirtchat">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/tyler_frappe.png" class= "objimg" id="tyler_frappe">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/vador.png" class= "objimg" id="vador">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/humains/vieille.png" class= "objimg" id="vieille">
+                </button>
+            </div>
+        </div>
+
+        <!-- animaux et autres -->
+        <div id="tab2">
+            <div>
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/chat.png" class= "objimg" id="chat">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/egar.png" class= "objimg" id="egar">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/milou.png" class= "objimg" id="milou">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/grenouille.png" class= "objimg" id="grenouille">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/grenouille2.png" class= "objimg" id="grenouille2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/mackogneur.png" class= "objimg" id="mackogneur">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/poisson.png" class= "objimg" id="poisson">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/poisson2.png" class= "objimg" id="poisson2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/poisson3.png" class= "objimg" id="poisson3">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/homard.png" class= "objimg" id="homard">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/homardtete.png" class= "objimg" id="homardtete">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/salameche.png" class= "objimg" id="salameche">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/scorpion.png" class= "objimg" id="scorpion">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/singe.png" class= "objimg" id="singe">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/singe2.png" class= "objimg" id="singe2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/singetete.png" class= "objimg" id="singetete">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/vache.png" class= "objimg" id="vache">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/vache2.png" class= "objimg" id="vache2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/vache3.png" class= "objimg" id="vache3">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/dragon.png" class= "objimg" id="dragon">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/squelette.png" class= "objimg" id="squelette">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/telephone.png" class= "objimg" id="telephone">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/personnages/animaux_et_autres/telephone_arme.png" class= "objimg" id="telephone_arme">
+                </button>
+            </div>
+        </div>
+
+        <!-- objets -->
+        <div id="tab3">
+            <div>
+                <button class="bouton">
+                    <img src="images/PNGs/objets/arbre.png" class= "objimg" id="arbre">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/arbre2.png" class= "objimg" id="arbre2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/cactus.png" class= "objimg" id="cactus">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/fleur.png" class= "objimg" id="fleur">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/nenuphar.png" class= "objimg" id="nenuphar">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/plante.png" class= "objimg" id="plante">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/ananas.png" class= "objimg" id="ananas">
+                </button>                
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/salade.png" class= "objimg" id="salade">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/pain.png" class= "objimg" id="pain">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/pains.png" class= "objimg" id="pains">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/sandwich.png" class= "objimg" id="sandwich">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/sandwich2.png" class= "objimg" id="sandwich2">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/cube_jambon.png" class= "objimg" id="cube_jambon">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/burger.png" class= "objimg" id="burger">
+                </button>
+                                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/frite.png" class= "objimg" id="frite">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/conserve.png" class= "objimg" id="conserve">
+                </button>
+                                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/casserole.png" class= "objimg" id="casserole">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/couvert.png" class= "objimg" id="couvert">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/tasse.png" class= "objimg" id="tasse">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/verre.png" class= "objimg" id="verre">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/tablebar.png" class= "objimg" id="bartable">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/cointable.png" class= "objimg" id="cointable">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/table_jeu.png" class= "objimg" id="jeutable">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/meubletv.png" class= "objimg" id="meubletv">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/bolide.png" class= "objimg" id="bolide">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/voiture.png" class= "objimg" id="voiture">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/voiture_face.png" class= "objimg" id="voiture_face">
+                </button>
+                                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/taxiferme.png" class= "objimg" id="taxiferme">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/taxiouvert.png" class= "objimg" id="taxiouvert">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/quatrequatre.png" class= "objimg" id="quatrequatre">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/balancoire.png" class= "objimg" id="balancoire">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/caddie.png" class= "objimg" id="caddie">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/tableau.png" class= "objimg" id="ardoisetableau">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/boite.png" class= "objimg" id="boite">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/ampoule.png" class= "objimg" id="ampoule">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/boutons.png" class= "objimg" id="boutons">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/chapeau.png" class= "objimg" id="chapeau">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/coeur.png" class= "objimg" id="coeur">
+                </button>
+                
+                <button class="bouton">
+                    <img src="images/PNGs/objets/colis.png" class= "objimg" id="colis">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/mains.png" class= "objimg" id="mains">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/nuage.png" class= "objimg" id="nuage">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/nuage2.png" class= "objimg" id="nuage2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/nuage3.png" class= "objimg" id="nuage3">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/piece.png" class= "objimg" id="piece">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/sac.png" class= "objimg" id="sac">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/soleil.png" class= "objimg" id="soleil">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/soleil2.png" class= "objimg" id="soleil2">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/soucoupe.png" class= "objimg" id="soucoupe">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/tapis.png" class= "objimg" id="tapis">
+                </button>
+
+                <button class="bouton">
+                    <img src="images/PNGs/objets/tente.png" class= "objimg" id="tente">
+                </button>
+
+            </div>
+        </div>
+
+        <!-- texte -->
+        <div id="tab4">
+            <div class="txtgrid">
+                <div class="txtgriditem">
+                    <textarea id="txt" cols="16" rows="5" class="txtarea" placeholder="ton texte ici"></textarea>
+
+                <button id="ajouter" class="btnadd">ajouter <br /> le <br /> texte</button>
+                </div>
+
+                <div class="txtgriditem">
+                    <div>couleur du texte</div>
+                    <input type="color" name="option_color" value="#FFFFFF" list="colors" class="colorpicker" id="txtcolor">
+                    <datalist id="colors">
+                        <option>#000000</option>
+                        <option>#FFFFFF</option>
+                        <option>#FFFF00</option>
+                        <option>#0000FF</option>
+                        <option>#FF0000</option>
+                        <option>#FFA500</option>
+                        <option>#008000</option>
+                        <option>#00FFFF</option>
+                        <option>#800080</option>
+                        <option>#808080</option>
+                    </datalist>
+
+                    <div>couleur du fond</div>
+                    <input type="color" name="option_color" value="#000000" list="colors" class="colorpicker" id="bkgcolor">
+                    <datalist id="colors">
+                        <option>#000000</option>
+                        <option>#FFFFFF</option>
+                        <option>#FFFF00</option>
+                        <option>#0000FF</option>
+                        <option>#FF0000</option>
+                        <option>#FFA500</option>
+                        <option>#008000</option>
+                        <option>#00FFFF</option>
+                        <option>#800080</option>
+                        <option>#808080</option>
+                    </datalist>
+                    <input type="file" onchange="upload(event)">
+                </div>
+            </div>
+        </div>
+
+        <!-- importer -->
+        <div id="tab5">
+            <div class="importgrid">
+                <img src="images/autres/importer.png" class="importerimg">
+                <input type="file" onchange="upload(event)" class="importer">
+            </div>
+        </div>
+    </div>
+
+<!-- script menu 1 -->
+<script>
+    $(document).ready(function() {
+        $("#content").find("[id^='tab']").hide(); // Hide all content
+        $("#tabs li:first").attr("id","current"); // Activate the first tab
+        $("#content #tab1").show(); // Show first tab's content
+    
+        $('#tabs a').click(function(e) {
+            e.preventDefault();
+            if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+             return;
+            }
+            else{
+              $("#content").find("[id^='tab']").hide(); // Hide all content
+              $("#tabs li").attr("id",""); //Reset id's
+              $(this).parent().attr("id","current"); // Activate this
+              $('#' + $(this).attr('name')).show(); // Show content for the current tab
+              var scroll = document.getElementById('content'); scroll.scrollTo(0,0); // Scroll Reset
+            }
+        });
+    });
+</script>
+
+<!-- menu fonds -->
+<ul id="ongs">
+    <li><a href="#" name="ong1">case 1</a></li>
+    <li><a href="#" name="ong2" class="deux">case 2</a></li>
+    <li><a href="#" name="ong3" class="quatre">case 3</a></li>
+    <li><a href="#" name="ong4" class="quatre">case 4</a></li>
+    <li><a href="#" name="ong5" class="six">case 5</a></li>
+    <li><a href="#" name="ong6" class="six">case 6</a></li>
+    <li><a href="#" name="ong7">fond</a></li>
+</ul>
+
+
+<div id="fonds">
+    <div id="ong1">
+        <div id="tl">
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong2">
+        <div id="tr">    
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong3">
+        <div id="ml">    
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong4">
+        <div id="mr">    
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong5">
+        <div id="bl">    
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong6">
+        <div id="br">    
+            <button class="fond">
+                <img src="images/PNGs/fonds/bateau/bateau.png" class= "objimg fondClass" id="bateau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/bureau/bureau.png" class= "objimg fondClass" id="bureau">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/comte/comte.png" class= "objimg fondClass" id="comte">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/maison/maison.png" class= "objimg fondClass" id="maison">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/montagne/montagne.png" class= "objimg fondClass" id="montagne">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/mordor/mordor.png" class= "objimg fondClass" id="mordor">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/souterrain/souterrain.png" class= "objimg fondClass" id="souterrain">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuit/ville_nuit.png" class= "objimg fondClass" id="villenuit">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/villenuitchaos/ville_nuit_chaos.png" class= "objimg fondClass" id="villenuitchaos">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/alien/alien.png" class= "objimg fondClass" id="alien">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/classe/classe.png" class= "objimg fondClass" id="classe">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/desert/desert.png" class= "objimg fondClass" id="desert">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/grece/grece.png" class= "objimg fondClass" id="grece">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ile/ile.png" class= "objimg fondClass" id="ile">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/nager/nager.png" class= "objimg fondClass" id="nager">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/ocean/ocean.png" class= "objimg fondClass" id="ocean">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/plaine/plaine.png" class= "objimg fondClass" id="plaine">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/salon/salon.png" class= "objimg fondClass" id="salon">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/starwars/starwars.png" class= "objimg fondClass" id="starwars">
+            </button>
+            <button class="fond">
+                <img src="images/PNGs/fonds/espace/espace.png" class= "objimg fondClass" id="espace">
+            </button>
+            <button class="fond">
+                <img src="images/blanc.png" class= "objimg fondClass" id="blanc">
+            </button>
+        </div>
+    </div>
+    <div id="ong7">
+        <div>    
+            <div class="clrbtn">
+                <input type="color" onchange="changeFond(this)"/>
+                <img src="images/autres/clrchg.png" class="imagechg">
+            </div>     
+        </div>
+    </div>
+</div>
+
+
+<!-- script menu 2 -->
+<script>
+    $(document).ready(function() {
+        $("#fonds").find("[id^='ong']").hide(); // Hide all content
+        $("#ongs li:first").attr("id","current"); // Activate the first tab
+        $("#fonds #ong1").show(); // Show first tab's content
+    
+        $('#ongs a').click(function(e) {
+            e.preventDefault();
+            if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+             return;
+            }
+            else{
+              $("#fonds").find("[id^='ong']").hide(); // Hide all content
+              $("#ongs li").attr("id",""); //Reset id's
+              $(this).parent().attr("id","current"); // Activate this
+              $('#' + $(this).attr('name')).show(); // Show content for the current tab
+              var scroll = document.getElementById('fonds'); scroll.scrollTo(0,0); // Scroll reset
+            }
+        });
+    });
+</script>
+
+
+
+
+<!-- lien script -->
+    <script src="script.js"></script>
+</body>
+</html>
