@@ -1,21 +1,23 @@
 # studio
 
-a simple comic strip creator for browsers, made for desktop/mobile devices
+* a simple comic strip creator for browsers, made for desktop/mobile devices
+* implemented [here](https://egar.fr/studio.html)
 
 ## get started / prerequisites
 
-download the html, css, and js files
-use your preferred code editor
+* download the html, css, and js files
+* use your preferred code editor
 
 not much else to it i think
 
-## Contributing
+## contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* i don't know how github works, you probably do
+* feel free to make changes and fix anything i did incorrectly
 
 ## author
 
-* **egar** - inspired by the work done in the [historic tale construction kit](https://htck.github.io/bayeux/#!/)
+**[egar](https://github.com/le-egar)**
 
 ## license
 
@@ -23,4 +25,5 @@ licensed under the [mit license](LICENSE.md)
 
 ## acknowledgments
 
-whoever made the js libraries i used has contributed more to this project than i have
+* this was inspired by the work done in the [historic tale construction kit](https://htck.github.io/bayeux/#!/)
+* whoever made the js libraries i used has contributed more to this project than i have
